@@ -44,6 +44,16 @@ namespace FreshMvvm.Popups
 
             if (page is PopupPage)
             {
+                var stackCount = PopupNavigation.Instance.PopupStack.Count;
+                if(stackCount > 0)
+                {
+                    var currentPageModel = PopupNavigation.Instance.PopupStack[stackCount-1].BindingContext as FreshBasePageModel;
+                    if (currentPageModel != null)
+                    {
+                        pageModel.PreviousPageModel = currentPageModel;
+                    }
+                }
+
                 await PushPopupPageModel((PopupPage)page, animate);
             }
             else
@@ -59,6 +69,19 @@ namespace FreshMvvm.Popups
 
         public static async Task PopPopupPageModel(this IPageModelCoreMethods pageModelCoreMethods, bool animate = true)
         {
+            await PopPopupPageModel(pageModelCoreMethods, null, animate);
+        }
+
+        public static async Task PopPopupPageModel(this IPageModelCoreMethods pageModelCoreMethods, object data = null, bool animate = true)
+        {
+            if(null != data)
+            {
+                var freshBasePageModel = PopupNavigation.Instance.PopupStack[0].BindingContext as FreshBasePageModel;
+                if (freshBasePageModel != null && freshBasePageModel.PreviousPageModel != null)
+                {
+                    freshBasePageModel.PreviousPageModel.ReverseInit(data);
+                }
+            }
             await PopupNavigation.Instance.PopAsync(animate);
         }
 
