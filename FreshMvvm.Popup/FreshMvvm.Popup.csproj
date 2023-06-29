@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FreshMvvm" Version="2.2.4" />
-    <PackageReference Include="Rg.Plugins.Popup" Version="1.1.5.188" />
+    <PackageReference Include="FreshMvvm" Version="4.0.1" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.1.0" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Class1.cs" />

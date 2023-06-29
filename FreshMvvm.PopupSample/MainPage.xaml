@@ -1,12 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:local="clr-namespace:FreshMvvm.PopupSample" 
-             x:Class="FreshMvvm.PopupSample.MainPage">
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="FreshMvvm.PopupSample.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:FreshMvvm.PopupSample"
+    x:DataType="local:MainPageModel"
+    Title="Main Page">
     <StackLayout>
-        <Button Text="Open Second Page" 
-                Command="{Binding OpenSecondPageCommand}" 
-                HorizontalOptions="Center" 
-                VerticalOptions="CenterAndExpand" />
+        <Entry
+            HorizontalOptions="Center"
+            Text="{Binding Title}"
+            VerticalOptions="End" />
+        <Button
+            Command="{Binding OpenSecondPageCommand}"
+            HorizontalOptions="FillAndExpand"
+            Text="Open Second Page"
+            BackgroundColor="Azure"
+            VerticalOptions="CenterAndExpand" />
     </StackLayout>
 </ContentPage>

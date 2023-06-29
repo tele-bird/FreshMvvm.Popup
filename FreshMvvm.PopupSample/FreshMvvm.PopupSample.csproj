@@ -10,11 +10,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
-    <PackageReference Include="Rg.Plugins.Popup" Version="1.1.5.188" />
-    <PackageReference Include="FreshMvvm" Version="2.2.4" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2578" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.1.0" />
+    <PackageReference Include="FreshMvvm" Version="4.0.1" />
+    <PackageReference Include="PropertyChanged.Fody" Version="3.4.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FreshMvvm.Popup\FreshMvvm.Popup.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="PropertyChanged.Fody" />
   </ItemGroup>
 </Project>

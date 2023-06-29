@@ -7,9 +7,9 @@ using Xamarin.Forms.Xaml;
 namespace FreshMvvm.PopupSample
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SamplePopupPage : PopupPage
+    public partial class SecondSamplePopupPage : PopupPage
     {
-        public SamplePopupPage()
+        public SecondSamplePopupPage()
         {
             InitializeComponent();
         }
@@ -21,3 +21,4 @@ namespace FreshMvvm.PopupSample
         }
     }
 }
+
